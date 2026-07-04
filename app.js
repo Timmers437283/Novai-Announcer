@@ -3,7 +3,7 @@
    =================================================================== */
 
 const CONFIG = {
-  DATA_URL: "./announcement.json",
+  DATA_URL: "./announcements.json",
   POLL_INTERVAL_MS: 30000,
   TYPE_SPEED_MS: 22,
 };
