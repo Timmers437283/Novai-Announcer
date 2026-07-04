@@ -1,7 +1,6 @@
 :root {
-  --bg-dark: #1A1A1A;
   --card-top: #242424;
-  --card-bottom: #171717;
+  --card-bottom: #151515;
   --border: rgba(255,255,255,0.08);
   --white: #FFFFFF;
   --light-gray: #CFCFCF;
@@ -18,82 +17,76 @@
 html, body {
   margin: 0;
   padding: 0;
+  height: 100%;
   background: transparent;
   font-family: var(--font-body);
   color: var(--white);
 }
 
+/* CENTER ON SCREEN */
 body {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
 }
 
-/* MAIN CARD */
 .novai-card {
-  width: 300px;              /* SKINNIER */
-  min-height: 220px;         /* TALLER */
-  padding: 20px 18px;
+  width: 260px;              
+  height: 150px;             
+
+  padding: 18px 16px;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 
   background: linear-gradient(180deg, var(--card-top), var(--card-bottom));
   border: 1px solid var(--border);
   border-radius: 18px;
 
   box-shadow:
-    0 18px 40px rgba(0,0,0,0.55),
+    0 18px 45px rgba(0,0,0,0.6),
     inset 0 1px 0 rgba(255,255,255,0.04);
 
   position: relative;
   overflow: hidden;
-
-  animation: popIn 0.35s ease-out;
 }
 
-@keyframes popIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px) scale(0.98);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-/* CONTENT CENTER */
+/* CONTENT CENTERED */
 .content {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  gap: 8px;
-  flex: 1;
+  gap: 10px;
+
+  /* prevents stretching weirdness */
+  overflow: hidden;
 }
 
 /* TITLE */
 .title-line {
   font-family: var(--font-display);
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 700;
-  letter-spacing: 0.2px;
+  text-align: center;
 }
 
 /* MESSAGE */
 .message-line {
   font-size: 14px;
-  line-height: 1.6;
+  line-height: 1.5;
   color: var(--light-gray);
 
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2px;
+
+  max-width: 220px;   /* IMPORTANT: stops width expansion */
+  word-wrap: break-word;
 }
 
 /* QUOTES */
@@ -105,31 +98,32 @@ body {
 /* CURSOR */
 .cursor {
   margin-left: 2px;
-  animation: blink 0.9s infinite;
 }
 
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
-
-/* TIMESTAMP */
+/* TIMESTAMP FIXED BOTTOM LEFT */
 .timestamp {
   position: absolute;
-  left: 14px;
-  bottom: 12px;
+  left: 12px;
+  bottom: 10px;
 
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: 9px;
   color: var(--muted-gray);
-  opacity: 0.8;
+  opacity: 0.85;
 }
 
-/* subtle polish */
-.novai-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at top, rgba(255,255,255,0.05), transparent 60%);
-  pointer-events: none;
+/* CLEAN ANIMATION */
+.novai-card {
+  animation: popIn 0.25s ease-out;
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.98);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
