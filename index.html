@@ -13,13 +13,19 @@
 
 <body>
 
-  <div class="novai-card" id="novaiCard">
+<div class="novai-card" id="novaiCard">
 
-    <div class="content">
+  <div class="content">
+
+    <div class="header-row">
+      <span class="new-flag" id="newFlag">NEW</span>
+    </div>
+
+    <div class="message-box">
 
       <div class="title-line" id="titleLine"></div>
 
-      <div class="message-line">
+      <div class="message-line" id="messageLine">
         <span class="quote-mark">&ldquo;</span>
         <span id="messageText"></span>
         <span class="quote-mark">&rdquo;</span>
@@ -28,11 +34,13 @@
 
     </div>
 
-    <div class="timestamp" id="timestamp">connecting…</div>
+    <div class="timestamp" id="timestamp">connecting&hellip;</div>
 
   </div>
 
-  <script src="app.js"></script>
+</div>
+
+<script src="app.js"></script>
 
 </body>
 </html>
