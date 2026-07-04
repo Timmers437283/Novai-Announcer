@@ -23,18 +23,20 @@ html, body {
   color: var(--white);
 }
 
-/* CENTER ON SCREEN */
+/* CENTER SCREEN */
 body {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+/* 🔒 HARD FIXED SIZE CARD */
 .novai-card {
-  width: 260px;              
-  height: 150px;             
+  width: 260px !important;
+  height: 150px !important;
 
-  padding: 18px 16px;
+  padding: 12px 12px !important;
+  margin: 0 !important;
 
   display: flex;
   flex-direction: column;
@@ -43,50 +45,54 @@ body {
 
   background: linear-gradient(180deg, var(--card-top), var(--card-bottom));
   border: 1px solid var(--border);
-  border-radius: 18px;
+  border-radius: 14px;
 
   box-shadow:
-    0 18px 45px rgba(0,0,0,0.6),
+    0 14px 40px rgba(0,0,0,0.6),
     inset 0 1px 0 rgba(255,255,255,0.04);
 
   position: relative;
   overflow: hidden;
 }
 
-/* CONTENT CENTERED */
+/* CONTENT LOCK */
 .content {
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  text-align: center;
-  gap: 10px;
+  align-items: center;
 
-  /* prevents stretching weirdness */
+  text-align: center;
+  gap: 6px;
+
   overflow: hidden;
 }
 
 /* TITLE */
 .title-line {
   font-family: var(--font-display);
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 700;
-  text-align: center;
+  line-height: 1.1;
+  max-width: 240px;
 }
 
 /* MESSAGE */
 .message-line {
-  font-size: 14px;
-  line-height: 1.5;
+  font-size: 12.5px;
+  line-height: 1.3;
   color: var(--light-gray);
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  max-width: 220px;   /* IMPORTANT: stops width expansion */
-  word-wrap: break-word;
+  max-width: 240px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 /* QUOTES */
@@ -100,11 +106,11 @@ body {
   margin-left: 2px;
 }
 
-/* TIMESTAMP FIXED BOTTOM LEFT */
+/* TIMESTAMP BOTTOM LEFT */
 .timestamp {
   position: absolute;
-  left: 12px;
-  bottom: 10px;
+  left: 10px;
+  bottom: 8px;
 
   font-family: var(--font-mono);
   font-size: 9px;
@@ -114,7 +120,7 @@ body {
 
 /* CLEAN ANIMATION */
 .novai-card {
-  animation: popIn 0.25s ease-out;
+  animation: popIn 0.2s ease-out;
 }
 
 @keyframes popIn {
