@@ -36,15 +36,20 @@ body {
 
 .novai-card {
   display: flex;
-  gap: 14px;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
+
   max-width: 520px;
   width: 100%;
   padding: 16px 18px;
+
   background: linear-gradient(180deg, var(--card-top) 0%, var(--card-bottom) 100%);
   border: 1px solid var(--border);
   border-radius: 14px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.03);
+
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35),
+              inset 0 1px 0 rgba(255,255,255,0.03);
+
   opacity: 0;
   transform: translateY(6px);
   animation: cardIn 0.5s ease-out 0.1s forwards;
@@ -55,35 +60,17 @@ body {
 }
 
 .content {
-  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* centers title + message */
+  text-align: center;
   min-width: 0;
 }
 
+/* remove top spacing feel */
 .header-row {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 6px;
-  min-height: 18px;
-}
-
-.new-flag {
-  margin-left: auto;
-  font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.08em;
-  color: var(--bg-dark);
-  background: var(--flag-bg);
-  padding: 2px 6px;
-  border-radius: 4px;
-  opacity: 0;
-  transform: scale(0.9);
-  transition: opacity 0.25s ease, transform 0.25s ease;
-}
-
-.new-flag.show {
-  opacity: 1;
-  transform: scale(1);
+  display: none;
 }
 
 .title-line {
@@ -91,8 +78,8 @@ body {
   font-weight: 700;
   font-size: 15px;
   color: var(--white);
-  margin-bottom: 4px;
-  min-height: 19px;
+  margin-bottom: 6px;
+  min-height: 0;
 }
 
 .message-line {
@@ -120,9 +107,18 @@ body {
   50% { opacity: 0; }
 }
 
+/* FORCE timestamp bottom-left */
 .timestamp {
   font-family: var(--font-mono);
   font-size: 11px;
   color: var(--muted-gray);
-  margin-top: 8px;
+
+  align-self: flex-start;
+  margin-top: 10px;
+  text-align: left;
+}
+
+/* NEW FLAG removed visually */
+.new-flag {
+  display: none;
 }
