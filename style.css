@@ -17,6 +17,7 @@
 html, body {
   margin: 0;
   padding: 0;
+  width: 100%;
   height: 100%;
   background: transparent;
   font-family: var(--font-body);
@@ -27,18 +28,17 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 /* =========================
-   HARD LOCK CARD SIZE
+   HARD LOCK CARD SIZE (REAL FIX)
 ========================= */
 .novai-card {
   width: 450px !important;
   height: 150px !important;
-  min-width: 450px !important;
-  max-width: 450px !important;
-  min-height: 150px !important;
-  max-height: 150px !important;
+
+  flex: 0 0 450px !important; /* prevents flex shrinking/growing */
 
   padding: 14px 16px !important;
   margin: 0 !important;
@@ -55,9 +55,11 @@ body {
   overflow: hidden;
 
   display: block !important;
+
+  transform: none !important; /* prevents accidental scaling */
 }
 
-/* CONTENT CENTERING WITHOUT AFFECTING SIZE */
+/* CONTENT CENTERING */
 .content {
   position: absolute;
   inset: 0;
@@ -69,7 +71,7 @@ body {
 
   text-align: center;
 
-  padding: 0 40px;
+  padding: 0 20px;
   pointer-events: none;
 }
 
@@ -90,9 +92,10 @@ body {
   justify-content: center;
   align-items: center;
 
-  max-width: 380px;
+  max-width: 420px;
   white-space: nowrap;
   overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* CURSOR */
