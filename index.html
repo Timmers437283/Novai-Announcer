@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>NovAI Announcer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="novai-card" id="novaiCard">
+
+    <div class="content">
+      <div class="header-row">
+        <span class="new-flag" id="newFlag">NEW</span>
+      </div>
+
+      <div class="message-box">
+        <div class="title-line" id="titleLine"></div>
+        <div class="message-line" id="messageLine">
+          <span class="quote-mark">&ldquo;</span><span id="messageText"></span><span class="quote-mark">&rdquo;</span><span class="cursor" id="cursor">|</span>
+        </div>
+      </div>
+
+      <div class="timestamp" id="timestamp">connecting&hellip;</div>
+    </div>
+
+  </div>
+
+<script src="app.js"></script>
+</body>
+</html>
