@@ -30,10 +30,9 @@ body {
   justify-content: center;
 }
 
-/* 🔒 HARD FIXED SIZE CARD */
 .novai-card {
-  width: 260px !important;
-  height: 150px !important;
+  width: 350px !important;
+  height: 185px !important;
 
   padding: 12px 12px !important;
   margin: 0 !important;
