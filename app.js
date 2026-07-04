@@ -84,7 +84,7 @@ async function checkForUpdate() {
     if (lastRenderedId === null) {
       els.titleLine.textContent = "Connection issue";
       els.messageText.textContent =
-        "Could not load the latest announcement.";
+        "Something happened...";
       els.cursor.classList.add("hidden");
       els.timestamp.textContent = "";
     }
