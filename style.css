@@ -36,86 +36,77 @@ body {
 
 .novai-card {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
 
-  max-width: 520px;
-  width: 100%;
-  padding: 16px 18px;
+  width: 360px;          /* narrower */
+  min-height: 180px;     /* taller */
 
-  background: linear-gradient(180deg, var(--card-top) 0%, var(--card-bottom) 100%);
+  padding: 18px 20px;
+
+  background: linear-gradient(180deg, var(--card-top), var(--card-bottom));
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: 16px;
 
-  box-shadow: 0 8px 24px rgba(0,0,0,0.35),
-              inset 0 1px 0 rgba(255,255,255,0.03);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.45),
+              inset 0 1px 0 rgba(255,255,255,0.04);
 
-  opacity: 0;
-  transform: translateY(6px);
-  animation: cardIn 0.5s ease-out 0.1s forwards;
+  position: relative;
+  overflow: hidden;
 }
 
-@keyframes cardIn {
-  to { opacity: 1; transform: translateY(0); }
-}
-
+/* CONTENT CENTERING */
 .content {
-  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;   /* centers title + message */
+  align-items: center;
+  justify-content: center;
+
   text-align: center;
-  min-width: 0;
+  gap: 6px;
+  flex: 1;
 }
 
-/* remove top spacing feel */
-.header-row {
-  display: none;
-}
-
+/* TITLE */
 .title-line {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 15px;
+  font-size: 16px;
   color: var(--white);
-  margin-bottom: 6px;
-  min-height: 0;
+  letter-spacing: 0.2px;
 }
 
+/* MESSAGE */
 .message-line {
-  font-size: 14.5px;
-  line-height: 1.5;
+  font-size: 14px;
+  line-height: 1.6;
   color: var(--light-gray);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.quote-mark {
-  color: var(--muted-gray);
-  font-family: var(--font-display);
-  font-size: 17px;
-}
-
+/* CURSOR */
 .cursor {
-  display: inline-block;
-  color: var(--white);
-  animation: blinkCursor 0.9s steps(1) infinite;
+  margin-left: 2px;
 }
 
-.cursor.hidden { display: none; }
-
-@keyframes blinkCursor {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
-
-/* FORCE timestamp bottom-left */
+/* TIMESTAMP */
 .timestamp {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--muted-gray);
+  position: absolute;
+  left: 14px;
+  bottom: 10px;
 
-  align-self: flex-start;
-  margin-top: 10px;
-  text-align: left;
+  font-family: var(--font-mono);
+  font-size: 10px;   /* smaller */
+  color: var(--muted-gray);
+  opacity: 0.85;
+}
+
+/* OPTIONAL: smoother look */
+.quote-mark {
+  opacity: 0.7;
 }
 
 /* NEW FLAG removed visually */
